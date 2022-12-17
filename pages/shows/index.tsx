@@ -73,7 +73,7 @@ export default function Home({ data }: any) {
             {data && data.map((item: any) => {
               return (
                 <GridItem key={item.id} w={{ base: "85", md: "80%" }} mr={{ base: "5", md: "0 " }} h="80%">
-                  <Link href={'/shows/' + item.show.id + ''}>
+                  <Link href={'/shows/' + item.show.id + ''} prefetch={false}>
                     <Card variant="unstyled" mt={{ base: "0", md: "20px" }} mb={{ base: "5", md: "0" }}>
                       <CardBody>
                         <Image
