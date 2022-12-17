@@ -4,7 +4,7 @@ import { StarIcon } from '@chakra-ui/icons'
 import Image from 'next/image'
 
 
-export async function getServerSideProps(context) {
+export async function getServerSideProps(context: any) {
 
   const { id } = context.query;
   // Fetch data from external API
@@ -25,7 +25,7 @@ export async function getServerSideProps(context) {
 }
 
 
-export default function Home({ data }) {
+export default function Home({ data }: any) {
 
   const [isMobile] = useMediaQuery("(max-width: 768px)")
 
@@ -107,7 +107,7 @@ export default function Home({ data }) {
           <GridItem pt={{ base: "30px", md: "0px" }} w={{ base: "85", md: "80%" }} mr={{ base: "5", md: "0 " }} h="80%">
             <Box pb={{ base: "15px", md: "0px" }}><Text fontSize='2xl'>Starring</Text></Box>
             <Box maxHeight={{ base: "auto", md: "300px" }} overflowY="auto">
-              {data && data._embedded && data._embedded.cast && data._embedded.cast.map((item, index) => {
+              {data && data._embedded && data._embedded.cast && data._embedded.cast.map((item: any, index: number) => {
                 return (
                   <Grid borderBottom={{ base: 'none', md: "2px solid #000000" }} key={index} templateColumns={{ base: 'auto 1fr', md: 'repeat(3, 1fr)' }} alignItems="center" pt={{ base: "20px", md: "0px" }} minHeight={{ base: "inherit", md: "70px" }}>
                     {
